@@ -1,0 +1,148 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jest/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "process": true,
+    "page": true,
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "unicorn",
+    "jest"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      4
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "react/no-unescaped-entities": 0,
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "info",
+          "error"
+        ]
+      }
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "array-callback-return": [
+      "error"
+    ],
+    "no-useless-concat": [
+      "error"
+    ],
+    "react/prop-types": 0,
+    "react/jsx-max-props-per-line": [
+      1
+    ],
+    "react/jsx-indent": [
+      2,
+      4,
+      {
+        "checkAttributes": true
+      }
+    ],
+    "react/jsx-closing-bracket-location": 2,
+    "react/jsx-closing-tag-location": 2,
+    "react/jsx-curly-spacing": [
+      2,
+      {
+        "when": "never",
+        "children": true
+      }
+    ],
+    "space-before-function-paren": [
+      "error",
+      "never"
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "unicorn/filename-case": [
+      "error",
+      {
+        "case": "pascalCase"
+      }
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/ServiceWorker.js"
+      ],
+      "rules": {
+        "no-console": [
+          "off",
+        ]
+      }
+    },
+    {
+      "files": [
+        ".backstop/**",
+        "I18nextScanner.Config.js",
+        "e2e/jest-puppeteer-env.js",
+        "src/ServiceWorker.js",
+        "stories/**"
+      ],
+      "rules": {
+        "no-console": [
+          "off"
+        ]
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "dectect"
+    }
+  }
+}

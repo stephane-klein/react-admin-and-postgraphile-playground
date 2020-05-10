@@ -1,0 +1,29 @@
+{
+  "processors": [
+    "stylelint-processor-styled-components"
+  ],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components"
+  ],
+  "rules": {
+    "function-name-case": "lower",
+    "selector-pseudo-class-case": "lower",
+    "selector-pseudo-element-case": "lower",
+    "selector-type-case": "lower",
+    "no-descending-specificity": null,
+    "indentation": [
+        4
+    ],
+    "declaration-block-semicolon-newline-after": "always",
+    "block-closing-brace-newline-after": "always",
+    "block-opening-brace-newline-after": "always",
+    "no-empty-first-line": true,
+    "max-empty-lines": 1
+  },
+  "ignoreFiles": [
+    "node_modules/**",
+    "public/**"
+  ]
+}
+
