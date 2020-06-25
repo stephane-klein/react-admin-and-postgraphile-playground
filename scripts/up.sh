@@ -9,4 +9,4 @@ docker-compose up -d postgres
 ./scripts/load-seed.sh
 ./scripts/load-fixtures.sh
 
-docke-compose up -d
+docker-compose up -d
