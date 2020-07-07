@@ -16,7 +16,7 @@ This project is based on:
 
 ```sh
 $ brew cask install docker
-$ brew install git node yarn
+$ brew install git node yarn jq
 ```
 
 ## Getting started
