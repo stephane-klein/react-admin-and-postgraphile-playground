@@ -12,8 +12,13 @@ services:
         - ./volumes/postgres/:/var/lib/postgresql/data/
     
     postgraphile:
+        # Image come from https://github.com/stephane-klein/poc-postgraphile-react-upload-to-s3/tree/master/postgraphile
         image: stephaneklein/poc-postgraphile-react-upload-to-s3:latest
         ports:
           - 5000:5000
         environment:
           GRAPHQL_API_DATABASE_STRING_URL: postgres://postgres:password@postgres:5432/postgres
+          GRAPHQL_API_SCHEMAS: public
+          GRAPHQL_API_JWT_TOKEN_IDENTIFIER: public.jwt_token
+          GRAPHQL_API_DEFAULT_ROLE: anonymous_user
+          GRAPHQL_API_JWT_SECRET: secret
