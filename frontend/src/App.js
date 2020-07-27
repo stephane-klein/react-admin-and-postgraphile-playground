@@ -3,8 +3,9 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { Admin, Resource } from 'react-admin'
 import { useApolloClient } from '@apollo/react-hooks'
 import pgDataProvider from 'ra-postgraphile'
-import { ContactList, ContactEdit, ContactCreate } from './Contacts'
+import { UserList, UserEdit, UserCreate } from './Users'
 import ApolloClient from './Apollo';
+import AuthProvider from './AuthProvider';
 
 const ReactAdminWrapper = () => {
     const [dataProvider, setDataProvider] = useState(null);
@@ -19,12 +20,15 @@ const ReactAdminWrapper = () => {
 
     return (
         dataProvider && (
-            <Admin dataProvider={dataProvider}>
+            <Admin
+                dataProvider={dataProvider}
+                authProvider={AuthProvider}
+            >
                 <Resource
-                    name="contacts"
-                    list={ContactList}
-                    edit={ContactEdit}
-                    create={ContactCreate}
+                    name="users"
+                    list={UserList}
+                    edit={UserEdit}
+                    create={UserCreate}
                 />
             </Admin>
         )

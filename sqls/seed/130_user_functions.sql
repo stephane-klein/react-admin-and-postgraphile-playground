@@ -32,8 +32,8 @@ CREATE TYPE public.jwt_token AS (
 );
 
 CREATE FUNCTION public.authenticate(
-  _email TEXT,
-  _password TEXT
+  email TEXT,
+  password TEXT
 ) RETURNS public.jwt_token AS $$
 BEGIN
   RETURN (
@@ -42,8 +42,8 @@ BEGIN
     FROM
       public.users
     WHERE 
-      users.email = _email AND
-      password_hash = crypt(_password, users.password_hash)
+      users.email = $1 AND
+      password_hash = crypt($2, users.password_hash)
   );
 END;
 $$ LANGUAGE PLPGSQL STRICT SECURITY DEFINER;
