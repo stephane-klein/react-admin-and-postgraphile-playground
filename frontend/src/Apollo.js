@@ -33,6 +33,7 @@ const authLink = new ApolloLink((operation, forward) => {
 });
 
 const ApolloClient = new _ApolloClient({
+    connectToDevTools: true,
     link: authLink.concat(createUploadLink({
         uri: 'http://127.0.0.1:5000/graphql',
         fetch: (uri, options) => {
